@@ -26,6 +26,22 @@ body {
   margin: 0px;
 }
 
+.grn-button {
+  background-color: #b7dc16;
+  border: none;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  cursor: pointer;
+  color: #005249;
+  font-family: 'Montserrat';
+  border-radius: 0.35rem;
+  letter-spacing: 0.075rem;
+  width: fit-content;
+}
+
 #header-top-buffer {
   background-color: #b7dc16;
   height: 2px;
@@ -57,26 +73,13 @@ body {
   background-size: cover;
 }
 
-#buy-tickets-button {
-  background-color: #b7dc16;
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  font-size: 14px;
-  margin: 0 auto;
-  cursor: pointer;
-  color: #005249;
-  font-family: 'Montserrat';
-  border-radius: 0.35rem;
+#buy-tickets {
   transform: translateY(-50%);
-  letter-spacing: 0.075rem;
+  margin: 0 auto;
 }
 
-#article-1 {
-  margin-left: 8%;
-  margin-right: 8%;
+article {
+  margin: 8%;
 }
 h1 {
   font-family: 'Montserrat';
@@ -91,21 +94,98 @@ p {
   font-size: 16px;
 }
 
-#read-more-button {
-  background-color: #b7dc16;
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  font-size: 14px;
-  cursor: pointer;
-  color: #005249;
-  font-family: 'Montserrat';
-  border-radius: 0.35rem;
-  letter-spacing: 0.075rem;
+.video-mobile {
+  background-image: url(/assets/video.svg);
+  background-position: center;
+  background-size: cover;
 }
 
-#video {
-  background-image: url(../assets/video.svg);
+.video-mobile img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  filter: drop-shadow(0px 0px 20px #000000);
+  /* -webkit-filter: drop-shadow(0px 0px 104px #000000);
+  -moz-filter: drop-shadow(0px 0px 104px #000000); */
+}
+
+#ads {
+  padding: 2rem;
+}
+
+#ads img {
+  display: block;
+  margin: 0 auto 4rem;
+}
+
+#weddings {
+  background-image: url(../assets/weddings.svg);
+  background-position: center;
+  background-size: cover;
+}
+
+#wedding-layer {
+  margin: 0 auto;
+  width: fit-content;
+  height: fit-content;
+  padding: 6rem 0;
+}
+
+#wedding-layer a {
+  margin: 0.8rem auto 0;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.5rem 0;
+}
+
+#info img {
+  margin-bottom: 1.5rem;
+}
+
+#contact {
+  font-family: 'IBM Plex Sans';
+  color: #1a6053;
+  text-align: center;
+  font-size: 16px;
+  margin: 2.5rem 0;
+}
+
+#contact a {
+  text-decoration: none;
+  color: #1a6053;
+}
+
+.bold-contact {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+footer {
+  background: linear-gradient(140.99deg, #6fc05d 0%, #004e40 100%);
+  border-radius: 5px;
+}
+
+footer * {
+  color: white;
+  font-family: 'IBM Plex Sans';
+  text-align: center;
+}
+
+#footer-info {
+  padding: 4rem 0;
+  /* font-size: ; */
+}
+
+.footer-links {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  text-decoration: none;
 }
