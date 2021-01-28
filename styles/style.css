@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_dJE3gnD_g.woff2)
+    format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v8/zYXgKVElMYYaJe8bpLHnCwDKhdHeFQ.woff2)
+    format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+body {
+  margin: 0px;
+}
+
+#header-top-buffer {
+  background-color: #b7dc16;
+  height: 2px;
+}
+
+#mobile-menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0;
+}
+
+#mobile-nav {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#mobile-menu-burger {
+  background-color: #b7dc16;
+  padding: 0.6rem;
+  border-radius: 0.2rem;
+}
+
+#splash {
+  background-image: url(../assets/splash-image.svg);
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+}
+
+#buy-tickets-button {
+  background-color: #b7dc16;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  margin: 0 auto;
+  cursor: pointer;
+  color: #005249;
+  font-family: 'Montserrat';
+  border-radius: 0.35rem;
+  transform: translateY(-50%);
+  letter-spacing: 0.075rem;
+}
+
+#article-1 {
+  margin-left: 8%;
+  margin-right: 8%;
+}
+h1 {
+  font-family: 'Montserrat';
+  color: #b7dc16;
+  font-size: 25px;
+  letter-spacing: 0.2rem;
+}
+
+p {
+  font-family: 'IBM Plex Sans';
+  color: #005249;
+  font-size: 16px;
+}
+
+#read-more-button {
+  background-color: #b7dc16;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  cursor: pointer;
+  color: #005249;
+  font-family: 'Montserrat';
+  border-radius: 0.35rem;
+  letter-spacing: 0.075rem;
+}
+
+#video {
+  background-image: url(../assets/video.svg);
+}
