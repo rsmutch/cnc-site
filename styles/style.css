@@ -1,3 +1,9 @@
+:root {
+  --pale-green: #f1f9ef;
+  --light-green: #b7dc16;
+  --teal: #005249;
+  --darker-green: #1a6053;
+}
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
@@ -27,7 +33,7 @@ body {
 }
 
 .grn-button {
-  background-color: #b7dc16;
+  background-color: var(--light-green);
   border: none;
   padding: 12px 24px;
   text-align: center;
@@ -35,19 +41,31 @@ body {
   display: block;
   font-size: 14px;
   cursor: pointer;
-  color: #005249;
+  color: var(--teal);
   font-family: 'Montserrat';
   border-radius: 0.35rem;
   letter-spacing: 0.075rem;
   width: fit-content;
+  transition-duration: 0.4s;
 }
 
 #header-top-buffer {
-  background-color: #b7dc16;
+  background-color: var(--light-green);
   height: 2px;
 }
 
-#mobile-menu {
+#banner {
+  display: none;
+}
+
+#desktop-nav {
+  margin: 0 auto;
+  display: none;
+  max-width: 970px;
+  padding-left: 0px;
+}
+
+#mobile-nav {
   display: flex;
   list-style: none;
   align-items: center;
@@ -55,15 +73,117 @@ body {
   padding: 0;
 }
 
-#mobile-nav {
+#nav {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-#mobile-menu-burger {
-  background-color: #b7dc16;
+#mobile-nav-burger {
+  background-color: var(--light-green);
   padding: 0.6rem;
   border-radius: 0.2rem;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  /* top: 50px;
+  left: 50px; */
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  margin: 0 auto;
+
+  cursor: pointer;
+
+  opacity: 0;
+  z-index: 2;
+
+  -webkit-touch-callout: none;
+}
+#menuToggle span {
+  display: block;
+  width: 21px;
+  height: 2px;
+  margin-bottom: 3px;
+  position: relative;
+
+  background: var(--teal);
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: var(--teal);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  margin-top: 80px;
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #f0f4cd; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+#menu a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  font-family: 'IBM Plex Sans';
+}
+
+#menu a:hover {
+  color: #f1f1f1;
 }
 
 #splash {
@@ -71,6 +191,8 @@ body {
   height: 250px;
   background-position: center;
   background-size: cover;
+  max-width: 970px;
+  margin: 0 auto;
 }
 
 #buy-tickets {
@@ -83,24 +205,24 @@ article {
 }
 h1 {
   font-family: 'Montserrat';
-  color: #b7dc16;
+  color: var(--light-green);
   font-size: 25px;
   letter-spacing: 0.2rem;
 }
 
 p {
   font-family: 'IBM Plex Sans';
-  color: #005249;
+  color: var(--teal);
   font-size: 16px;
 }
 
-.video-mobile {
+#video {
   background-image: url(/assets/video.svg);
   background-position: center;
   background-size: cover;
 }
 
-.video-mobile img {
+#video-play {
   display: block;
   margin: 0 auto;
   padding-top: 6rem;
@@ -110,11 +232,9 @@ p {
   -moz-filter: drop-shadow(0px 0px 104px #000000); */
 }
 
-#ads {
+#bushcraft img,
+#segway img {
   padding: 2rem;
-}
-
-#ads img {
   display: block;
   margin: 0 auto 4rem;
 }
@@ -136,20 +256,20 @@ p {
   margin: 0.8rem auto 0;
 }
 
-#info {
+#payments {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 2.5rem 0;
 }
 
-#info img {
+#payments img {
   margin-bottom: 1.5rem;
 }
 
 #contact {
   font-family: 'IBM Plex Sans';
-  color: #1a6053;
+  color: var(--darker-green);
   text-align: center;
   font-size: 16px;
   margin: 2.5rem 0;
@@ -157,7 +277,7 @@ p {
 
 #contact a {
   text-decoration: none;
-  color: #1a6053;
+  color: var(--darker-green);
 }
 
 .bold-contact {
@@ -176,7 +296,7 @@ footer * {
   text-align: center;
 }
 
-#footer-info {
+footer {
   padding: 4rem 0;
   /* font-size: ; */
 }
@@ -188,4 +308,175 @@ footer * {
 
 .footer-links a {
   text-decoration: none;
+}
+
+@media screen and (min-width: 970px) {
+  #banner {
+    background-color: var(--pale-green);
+    height: 46px;
+    display: flex;
+  }
+
+  #banner a,
+  #banner div {
+    text-decoration: none;
+    color: var(--darker-green);
+    font-family: 'Montserrat';
+    font-size: 14px;
+    margin: auto;
+  }
+
+  #mobile-nav {
+    display: none;
+  }
+
+  #desktop-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    font-family: 'IBM Plex Sans';
+    height: 100px;
+  }
+
+  #desktop-nav li a {
+    text-decoration: none;
+    padding: 1rem;
+    color: var(--darker-green);
+  }
+
+  #desktop-nav-basket * {
+    padding-left: 3px !important;
+  }
+
+  #desktop-nav-basket img {
+    height: 18px;
+    color: var(--light-green);
+  }
+
+  #splash {
+    height: 419px;
+  }
+
+  article {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  article * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  p {
+    max-width: 507px;
+  }
+
+  #desktop-grid {
+    display: grid;
+    grid-template-areas:
+      'video bush'
+      'segway weddings';
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    max-width: 970px;
+    margin: 0 auto;
+  }
+
+  #video {
+    display: flex;
+    grid-area: video;
+  }
+
+  #video-play {
+    margin: auto auto;
+  }
+
+  #bushcraft {
+    grid-area: bush;
+    margin: auto auto;
+  }
+
+  #segway {
+    grid-area: segway;
+    margin: auto auto;
+  }
+
+  #weddings {
+    grid-area: weddings;
+  }
+
+  #info {
+    display: grid;
+    grid-template-areas: 'payments contact';
+    grid-template-columns: 1fr 1fr;
+    max-width: 970px;
+    margin: 0 auto;
+  }
+
+  #payments {
+    grid-area: payments;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  #payments * {
+    width: 4rem;
+  }
+
+  #contact {
+    grid-area: contact;
+    text-align: left;
+  }
+
+  #contact {
+    font-size: 14px;
+  }
+
+  .bold-contact {
+    font-size: 14px;
+  }
+
+  #phone-and-email {
+    display: flex;
+  }
+
+  #phone {
+    margin-right: 1rem;
+  }
+
+  footer {
+    padding: 2rem;
+  }
+
+  #footer-container {
+    display: grid;
+    grid-template-areas: 'links extra';
+    grid-template-columns: 1fr 1fr;
+    max-width: 970px;
+    margin: 0 auto;
+  }
+
+  #footer-links-container {
+    grid-area: links;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #extra-details {
+    grid-area: extra;
+    font-size: 14px;
+    position: relative;
+    left: 5rem;
+  }
+
+  .company-details {
+    text-align: left;
+  }
+
+  .footer-links {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
 }

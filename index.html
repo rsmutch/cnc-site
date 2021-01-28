@@ -4,33 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/style.css" />
-    <title>Document</title>
+    <title>Cheshire Outdoors</title>
+    <script src="./scripts/script.js"></script>
   </head>
   <body>
     <div id="header-top-buffer"></div>
+    <div id="banner"><div id="banner-text">01606 882223 <a href="mailto:events@cheshire-outdoors.info">events@cheshire-outdoors.info</a></div></div>
+    <!-- Header -->
     <header>
-      <nav id="mobile-nav">
-        <ul id="mobile-menu">
-          <li id="mobile-menu-logo">
-            <a href="#"><img src="./assets/logo.svg" alt="logo" /></a>
+
+      <!-- Nav -->
+      <nav id="nav">
+
+        <!-- Desktop -->
+        <ul id="desktop-nav">
+          <li id="desktop-nav-logo">
+            <a id="nav-logo" href="#"><img src="./assets/logo.svg" alt="logo" /></a>
           </li>
-          <li id="mobile-menu-contact">
+          <li id="desktop-nav-home"><a href="#">Home</a></li>
+          <li id="desktop-nav-about"><a href="#">About</a></li>
+          <li id="desktop-nav-bushcraft"><a href="#">Bushcraft</a></li>
+          <li id="desktop-nav-groups"><a href="#">Groups</a></li>
+          <li id="desktop-nav-activities"><a href="#">Activities</a></li>
+          <li id="desktop-nav-contact"><a href="#">Contact</a></li>
+          <li id="desktop-nav-basket"><img src="/assets/basket-green.svg" alt=""/><a href="#">Basket</a></li>
+          <li id="desktop-nav-book">
+            <a href="#" class="grn-button">BOOK NOW</a></li>
+        </ul>
+
+        <!-- Mobile -->
+        <ul id="mobile-nav">
+          <li id="mobile-nav-logo">
+            <a id="nav-logo" href="#"><img src="./assets/logo.svg" alt="logo" /></a>
+          </li>
+          <li id="mobile-nav-contact">
             <a href="#"><img src="./assets/phone.svg" alt="" /></a>
           </li>
-          <li id="mobile-menu-email">
+          <li id="mobile-nav-email">
             <a href="#"><img src="./assets/mail.svg" alt="" /></a>
           </li>
-          <li id="mobile-menu-basket">
+          <li id="mobile-nav-basket">
             <a href="#"><img src="./assets/basket.svg" alt="" /></a>
           </li>
-          <li id="mobile-menu-burger">
-            <a href="#"><img src="./assets/burger.svg" alt="" /></a>
+
+              <!-- Mobile Popup -->
+          <li id="mobile-nav-burger">
+            <nav role='navigation'>
+              <div class="" id="menuToggle">
+                <input type="checkbox" onchange="toggleNav()"/>
+              <span></span>
+              <span></span>
+              <span></span>
+              <div id="menu">
+                <a href="#"><b>Home</b></a>
+                <a href="#">About</a>
+                <a href="#">Bushcraft</a>
+                <a href="#">Groups</a>
+                <a href="#">Activities</a>
+                <a href="#">Contact</a>
+              </div>
+            </div>
+            </nav>
           </li>
         </ul>
       </nav>
     </header>
+
+    <!-- Splash Image -->
     <div id="splash"></div>
     <a id="buy-tickets" class="grn-button">BUY TICKETS</a>
+
+    <!-- Article -->
     <article id="article-1">
     <h1>LET'S GO OUTSIDE</h1>
     <p>At Cheshire Outdoors we can’t get enough of the fresh air! So whether you’re looking for the thrill of a woodland glide on our Segway experience, testing your skill with archery and laser clay shooting or being amazed as you get hands-on and try birds of prey in a falconry encounter! 
@@ -39,52 +83,73 @@
     <br>
     <a href="#" class="grn-button">READ MORE</a>
   </article>
-  <!-- Video -->
-  <div class="video-mobile">
-    <img class="video-mobile-play" src="./assets/play.svg" alt="">
-  </div>
-    <!-- Ads -->
-    <div id="ads">
-      <img id="bushcraft" src="./assets/cheshire-bushcraft.svg" alt="">
-      <img src="./assets/cheshire-segway.svg" alt="" id="segway">
-    </div>  
+
+  <!-- Features -->
+  <div id="desktop-grid">
+
+    <!-- Video -->
+    <div id="video">
+      <img id="video-play" src="./assets/play.svg" alt="">
+    </div>
+
+  <!-- Bushcraft -->
+      <a href="#" id="bushcraft">
+      <img src="./assets/cheshire-bushcraft.svg" alt=""></a>
+
+      <!-- Segway -->
+      <a id="segway" href="#">
+      <img src="./assets/cheshire-segway.svg" alt="" > </a>
+
     <!-- Weddings -->
     <div id="weddings"><div id="wedding-layer">
     <img src="./assets/weddings-text.svg" alt="" id="weddings-text">
     <a href="#" class="grn-button">VISIT WEBSITE</a>
   </div>
   </div>
+</div>
+
+<!-- Extra Info -->
   <div id="info">
+
+    <!-- Payments -->
+    <div id="payments">
     <img src="./assets/visa.svg" alt="">
     <img src="./assets/paypal.svg" alt="">
     <img src="./assets/sage.svg" alt="">
     <img src="./assets/mastercard.svg" alt="">
-    <div id="contact">
+  </div>
 
+  <!-- Contact Details -->
+    <div id="contact">
     <div id="address"><div class="bold-contact"> Cheshire Falconry Centre</div><br>
       Blakemere Village,<br>
       Chester Road, Sandiway,<br>
       Northwich, Cheshire, CW8 2EB<br>
       <br>
     </div>
-
-    <div id="phone"><div class="bold-contact">01606 882223</div>
+<div id="phone-and-email">
+    <div id="phone" class="bold-contact">01606 882223
   </div><br>
-    <div id="email"><div class="bold-contact"><a href="mailto:events@cheshire-outdoors.info">events@cheshire-outdoors.info</a> </div>
+    <div id="email" class="bold-contact"><a href="mailto:events@cheshire-outdoors.info">events@cheshire-outdoors.info</a> </div></div>
   </div></b></div>
   </div>
   </div>
   </div>
+
+  <!-- Footer -->
   <footer>
-    <div id="footer-info">
+    <div id='footer-container'>
+    <div id="footer-links-container">
     <div class="footer-links"><a href=""> Terms & Conditions</a></div>
     <div class="footer-links"><a href=""> Privacy Policy</a></div>
     <div class="footer-links"><a href=""> Sitemap</a></div>
     <div class="footer-links"><a href=""> Secure Payment</a></div>
-    <br>
-    <div class="company-details">Registered in England and Wales: No 08881823</div><br
+  </div>
+    <div id="extra-details">
+    <div class="company-details">Registered in England and Wales: No 08881823</div>
     <div class="company-details">Copyright Cheshire Bushcraft ltd © 2020</div>
   </div>
+</div>
   </footer>
   </body>
 </html>
