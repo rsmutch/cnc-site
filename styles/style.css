@@ -402,6 +402,11 @@ footer {
     margin: auto auto;
   }
 
+  #bushcraft img,
+  #segway img {
+    margin: 0 auto;
+  }
+
   #weddings {
     grid-area: weddings;
   }
